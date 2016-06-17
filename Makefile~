@@ -1,0 +1,11 @@
+all:
+	./antlr3 *.java
+	./antlr3 camle -irt myTest.w|./disptree.c
+
+clean:
+	rm -f *.class
+	rm -f *.txt
+	rm -f *.tokens
+	rm -f *.ass
+	rm -f Lex.java
+	rm -f Syn.java

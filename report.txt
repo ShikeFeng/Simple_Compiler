@@ -1,0 +1,278 @@
+COMS22201 Language Engineering CWK1 Report
+Shike Feng
+Username : sf14773
+
+1. Language Features I have successfully implemented:
+	I have implemeneted all features listed in the language defininition 
+	of while language successfully. I have also implemented several extra features.
+	Extra features I have implemented are listed in part 4 of my report.
+
+
+2. How to compile and run my compiler:
+	I extended the skeleton code supplied in this unit for this coursework.
+	The instructions to compile and run my compiler on a standard lab machine(Linux OS)
+	is as follows:
+		./antlr3 Lex.g
+		./antlr3 Syn.g
+		javac TokenConv.java
+		java TokenConv Syn.tokens Irt.java
+		./antlr3 *.java
+		./antlr3 camle TESTNAME.w
+		./assmule TESTNAME.ass
+
+	I have also included a Makefile file, you may simply change the test name and use it to run my code.
+
+3. Outputs produced by emulator for example test programs:
+	
+	test1.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test1.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test1.ass ASSEMBLY BEGINS
+			---test1.ass ASSEMBLY ENDS
+			---test1.ass EXECUTION BEGINS
+			10023
+			10023
+			76
+			76
+			---test1.ass EXECUTION ENDS
+			STATISTICS:
+			  32 instructions generated
+			  5 registers used
+			  32 instructions executed
+
+	tets2.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test2.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test2.ass ASSEMBLY BEGINS
+			---test2.ass ASSEMBLY ENDS
+			---test2.ass EXECUTION BEGINS
+			7
+			-5
+			28
+			-91
+			70
+			---test2.ass EXECUTION ENDS
+			STATISTICS:
+			  17 instructions generated
+			  2 registers used
+			  17 instructions executed
+
+	test3.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test3.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test3.ass ASSEMBLY BEGINS
+			---test3.ass ASSEMBLY ENDS
+			---test3.ass EXECUTION BEGINS
+			Enter a number: 4
+			Enter a number: 4
+			First is 4; second is 4
+			---test3.ass EXECUTION ENDS
+			STATISTICS:
+			  19 instructions generated
+			  3 registers used
+			  19 instructions executed
+
+
+	test4.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test4.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test4.ass ASSEMBLY BEGINS
+			---test4.ass ASSEMBLY ENDS
+			---test4.ass EXECUTION BEGINS
+			13
+			5
+
+			78bce
+			---test4.ass EXECUTION ENDS
+			STATISTICS:
+			  151 instructions generated
+			  4 registers used
+			  120 instructions executed
+
+
+	test5.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule -j test5.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test5.ass ASSEMBLY BEGINS
+			---test5.ass ASSEMBLY ENDS
+			---test5.ass EXECUTION BEGINS
+			1
+			WARNING: Disabled backward jump in   10: JMP 1  
+			3
+			WARNING: Disabled backward jump in   38: JMP 25  
+			7
+			WARNING: Disabled backward jump in   60: JMP 51  
+			b
+			WARNING: Disabled backward jump in   92: JMP 80  
+			c
+			WARNING: Disabled backward jump in  108: JMP 100  
+			d
+			WARNING: Disabled backward jump in  117: JMP 109  
+			WARNING: Disabled backward jump in  118: JMP 93  
+			---test5.ass EXECUTION ENDS
+			STATISTICS:
+			  120 instructions generated
+			  4 registers used
+			  100 instructions executed
+
+
+	test6.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test6.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test6.ass ASSEMBLY BEGINS
+			---test6.ass ASSEMBLY ENDS
+			---test6.ass EXECUTION BEGINS
+			truefalsefalsetruetruefalsefalsefalsetruefalsefalsefalsefalse
+			---test6.ass EXECUTION ENDS
+			STATISTICS:
+			  93 instructions generated
+			  2 registers used
+			  53 instructions executed
+
+
+	test7.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule test7.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---test7.ass ASSEMBLY BEGINS
+			---test7.ass ASSEMBLY ENDS
+			---test7.ass EXECUTION BEGINS
+			Factorial calculator
+			Enter number: 3
+			Factorial of 3 is 6
+
+			Exponential calculator
+			Enter base: 4
+			Enter exponent: 5
+			4 raised to the power of 5 is 1024
+			---test7.ass EXECUTION ENDS
+			STATISTICS:
+			  114 instructions generated
+			  5 registers used
+			  246 instructions executed
+
+
+	extra.w:
+			CAMLE - Compiler to Abstract Machine for Language Engineering
+			./assmule extra.ass
+			ASS/MULE - ASSembler/eMUlator for Language Engineering - v2.7 - Steve Gregory
+			---extra.ass ASSEMBLY BEGINS
+			---extra.ass ASSEMBLY ENDS
+			---extra.ass EXECUTION BEGINS
+			Recommended parameters: size=28, rings=10
+			Size: 28
+			Number of rings: 10
+			                                              9 9 9 9 9 9 9 9 9 9 9                                               
+			                                      9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9                                       
+			                                  9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9                                   
+			                              9 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9                               
+			                          9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9                           
+			                        9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9                         
+			                    9 9 9 9 9 9 8 8 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9                     
+			                  9 9 9 9 9 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 9 9 9 9 9                   
+			                9 9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9 9                 
+			              9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9               
+			            9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9             
+			            9 9 9 8 8 8 8 8 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 8 8 8 8 8 9 9 9             
+			          9 9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9 9           
+			        9 9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9 9         
+			        9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9         
+			      9 9 9 9 8 8 8 7 7 7 7 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 7 7 7 7 8 8 8 9 9 9 9       
+			      9 9 9 8 8 8 7 7 7 7 6 6 6 6 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 7 7 7 7 8 8 8 9 9 9       
+			    9 9 9 8 8 8 8 7 7 7 6 6 6 6 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 7 7 7 8 8 8 8 9 9 9     
+			    9 9 9 8 8 8 7 7 7 7 6 6 6 5 5 5 5 4 4 4 4 4 4 3 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 6 6 6 7 7 7 7 8 8 8 9 9 9     
+			  9 9 9 9 8 8 8 7 7 7 6 6 6 6 5 5 5 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 5 5 5 6 6 6 6 7 7 7 8 8 8 9 9 9 9   
+			  9 9 9 8 8 8 7 7 7 7 6 6 6 5 5 5 5 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 5 5 5 5 6 6 6 7 7 7 7 8 8 8 9 9 9   
+			  9 9 9 8 8 8 7 7 7 6 6 6 6 5 5 5 4 4 4 4 3 3 3 3 3 2 2 2 2 2 3 3 3 3 3 4 4 4 4 5 5 5 6 6 6 6 7 7 7 8 8 8 9 9 9   
+			  9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 4 3 3 3 3 2 2 2 2 2 2 2 2 2 3 3 3 3 4 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9   
+			9 9 9 8 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 3 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 5 4 4 4 3 3 3 2 2 2 2 1 1 1 1 1 2 2 2 2 3 3 3 4 4 4 5 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 3 2 2 2 1 1 1 1 1 1 1 2 2 2 3 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 2 2 2 1 1 1 1 1 1 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 2 2 2 1 1 1 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 2 2 2 1 1 1 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 2 2 2 1 1 1 0 0 0 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 2 2 2 1 1 1 1 1 1 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 3 2 2 2 1 1 1 1 1 1 1 2 2 2 3 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 5 4 4 4 3 3 3 2 2 2 2 1 1 1 1 1 2 2 2 2 3 3 3 4 4 4 5 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9 
+			9 9 9 8 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 3 3 3 3 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 8 9 9 9 
+			  9 9 9 8 8 8 7 7 7 6 6 6 5 5 5 4 4 4 4 3 3 3 3 2 2 2 2 2 2 2 2 2 3 3 3 3 4 4 4 4 5 5 5 6 6 6 7 7 7 8 8 8 9 9 9   
+			  9 9 9 8 8 8 7 7 7 6 6 6 6 5 5 5 4 4 4 4 3 3 3 3 3 2 2 2 2 2 3 3 3 3 3 4 4 4 4 5 5 5 6 6 6 6 7 7 7 8 8 8 9 9 9   
+			  9 9 9 8 8 8 7 7 7 7 6 6 6 5 5 5 5 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 5 5 5 5 6 6 6 7 7 7 7 8 8 8 9 9 9   
+			  9 9 9 9 8 8 8 7 7 7 6 6 6 6 5 5 5 4 4 4 4 4 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 5 5 5 6 6 6 6 7 7 7 8 8 8 9 9 9 9   
+			    9 9 9 8 8 8 7 7 7 7 6 6 6 5 5 5 5 4 4 4 4 4 4 3 3 3 3 3 3 3 4 4 4 4 4 4 5 5 5 5 6 6 6 7 7 7 7 8 8 8 9 9 9     
+			    9 9 9 8 8 8 8 7 7 7 6 6 6 6 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 7 7 7 8 8 8 8 9 9 9     
+			      9 9 9 8 8 8 7 7 7 7 6 6 6 6 5 5 5 5 5 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 6 6 6 6 7 7 7 7 8 8 8 9 9 9       
+			      9 9 9 9 8 8 8 7 7 7 7 6 6 6 6 5 5 5 5 5 5 5 4 4 4 4 4 4 4 5 5 5 5 5 5 5 6 6 6 6 7 7 7 7 8 8 8 9 9 9 9       
+			        9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9         
+			        9 9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9 9         
+			          9 9 9 9 8 8 8 8 7 7 7 7 6 6 6 6 6 6 6 5 5 5 5 5 5 5 5 5 6 6 6 6 6 6 6 7 7 7 7 8 8 8 8 9 9 9 9           
+			            9 9 9 8 8 8 8 8 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 8 8 8 8 8 9 9 9             
+			            9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9             
+			              9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 7 7 6 6 6 6 6 6 6 6 6 7 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9               
+			                9 9 9 9 9 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 9 9 9 9 9                 
+			                  9 9 9 9 9 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 9 9 9 9 9                   
+			                    9 9 9 9 9 9 8 8 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 8 8 8 8 8 8 8 8 9 9 9 9 9 9                     
+			                        9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9                         
+			                          9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9                           
+			                              9 9 9 9 9 9 9 9 8 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9                               
+			                                  9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9                                   
+			                                      9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9                                       
+			                                              9 9 9 9 9 9 9 9 9 9 9                                               
+			---extra.ass EXECUTION ENDS
+			STATISTICS:
+			  145 instructions generated
+			  6 registers used
+			  1646076 instructions executed
+			
+
+4. Extras I have done:
+	
+	Error handling: 
+		ANTLR has its default error reporting and recovery machanism, but its error reporting does not report the error in detail.
+		I read ANTLR v3 documentation and overrode the displayRecognitionError() method. I used several APIs given by org.antlr.runtime.RecognitionError and changed a way of displaying it.
+		When encounter an error, my program will print the error String to System.err. The information about these errorcontains Error Number, Error type, Error location in the program and the Error message.
+
+
+	Efficiency(optimizations):
+		1)Dead code elimination for write statement.
+			If there is an expression inside the write statement, e.g write(1+2); all the computations for the expression are temporary values, after the write statement is executed, these used register can be "freed".
+			THis can save the amount of registers for some programs.
+		2)Pre-computation for arithmetic expressions and boolean expressions in irt.java.
+		  This can save the amount of instructions and registers for some programs.
+		3)Liveness-Analysis
+		4)Register-allocation
+			I have implemented Liveness Analysis and use it to finish register allocation. I did the register allocation based on the assembly code produced in code generation phase. There are several extra java files which are used in this part. However, since I did the register allocation based on the assenbly code, it is really difficult to spill registers into memory. It could be implemented more close to real machine if I have enough time to translate the Irtree to quadruples.
+
+
+	Language features :
+		1) Real number
+			I have implemented real number, it can do all the arithmetic opetrations just like in any modern programming languages(e.g C and Java). You can do operations between real number and integer as well. The corresponding test file for it is "extraTest1.w".
+		2) OR '|' in boolean expression       see "extraTest2.w"
+		3) less than '<' in arithmetic relation			see "extraTest2.w"
+		4) greater than '>' in arithmetic relation		see "extraTest2.w"
+		5) greater than or equal to '>=' in arithmetic relation			see "extraTest2.w"
+		6) inequal '!=' in arithmetic relation			see "extraTest2.w"
+		7) Bitwise xor '^' in arithmetic operation for intergers		see "extraTest2.w"
+		8) division '/' in arithmetic opetrations 		see "extraTest2.w"
+
+		For these example tests I provided, I just wrote some really simple statements to show these language features, I have tested on some more complicate programs, It's working as expected.
+
+
+5. Number of hours I have spent on "Extras":
+
+		I finished the basic 70% three days after the final part was released. After that, I started working on these extra parts. However, because of other units' coursework, I only started fully concentrate on extra parts from week10.
+
+		For error handling part, I spent a lot of time reading antlr3's documentations for error handling and think about what language feature to implement and how to implement. I got two ideas initially and finally chose a easier way. If I could have more time to get more familiar with antlr, I believe I could do better.
+
+		As for optimizations, initially I tried to translate the Irtree to quadruples. My initial idea is after doing the optimizations we learned from lecture, translate the quadruples back to Irtree. But I found it would be extremely difficult to construct an Irtree from quadruples, therefore, I took your advice and implemented the optimizations I listed above based on Irtree and the generated Assembly code.
+
+		For extra features, the real number took me some time to make sure it is working perfectly. Other extras are not that difficult.
+
+		I did not calculate exactly how many hours I have spent on extras, I believe the time I spent on this coursework is definitely more than the expected time for it. For these extras, probably I have spent 35 hours(at least).
